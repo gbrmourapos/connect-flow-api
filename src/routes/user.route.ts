@@ -5,4 +5,6 @@ const usersRoute = Router();
 
 usersRoute.get("/", getUser);
 
+
+
 export { usersRoute };

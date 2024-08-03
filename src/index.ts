@@ -1,5 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
+import { authRoute } from "./routes";
 
 const app = express();
 const port = 5000;
@@ -9,7 +10,8 @@ app.use(cors())
 
 
 // Example
-// app.use('/user')
+app.use('/user')
+app.use('/auth', authRoute);
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error(err.stack);
